@@ -1,0 +1,25 @@
+{
+  "name": "daf-plugin",
+  "version": "1.0.0",
+  "source": "src/index.ts",
+  "main": "build/index.js",
+  "umd:main": "build/index.umd.js",
+  "module": "build/index.m.js",
+  "esmodule": "build/index.modern.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "microbundle",
+    "watch": "microbundle watch"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "daf-core": "^7.0.0-beta.45",
+    "microbundle": "^0.12.4"
+  },
+  "files": [
+    "build/**/*",
+    "src/**/*",
+    "README.md",
+    "LICENSE"
+  ]
+}

@@ -1,0 +1,2 @@
+const e={components:{schemas:{IMyAgentPluginFooArgs:{type:"object",properties:{did:{type:"string",description:"Decentralized identifier"},bar:{type:"string",description:"bar"}}}},methods:{myPluginFoo:{description:"Does foo",arguments:{$ref:"#/components/schemas/IMyAgentPluginFooArgs"},returnType:{type:"string"}}}}};class o{constructor(){this.schema=e,this.methods={myPluginFoo:this.myPluginFoo.bind(this)}}async myPluginFoo(e,o){const t=await o.agent.resolveDid({didUrl:e.did});return console.log(t),e.bar}}export{o as MyAgentPlugin};
+//# sourceMappingURL=index.modern.js.map
