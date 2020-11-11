@@ -1674,6 +1674,13 @@ daf-core@^7.0.0-beta.45:
     events "^3.0.0"
     z-schema "^4.2.3"
 
+daf-key-manager@^7.0.0-beta.45:
+  version "7.0.0-beta.45"
+  resolved "https://registry.yarnpkg.com/daf-key-manager/-/daf-key-manager-7.0.0-beta.45.tgz#bb121c44786e926734d6179e135e0891a9e1e0af"
+  integrity sha512-ewJjO9esIONqizCuqfb9LO8eMxgFtsVdUgQy00Y7BvYA4TlqaYd+p8HNrXaaKawEpcbzUCs6dB9/fyzofakEJg==
+  dependencies:
+    daf-core "^7.0.0-beta.45"
+
 debug@^4.1.0, debug@^4.1.1:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.2.0.tgz#7f150f93920e94c58f5574c2fd01a3110effe7f1"
