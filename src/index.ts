@@ -1,1 +1,1 @@
-export { MyAgentPlugin } from './agent-plugin'
+export { MyAgentPlugin } from './agent/my-plugin'

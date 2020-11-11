@@ -1,5 +1,5 @@
 import { IAgentPlugin } from 'daf-core'
-import { IMyAgentPlugin, IMyAgentPluginFooArgs, IContext } from './types/IMyAgentPlugin'
+import { IMyAgentPlugin, IMyAgentPluginFooArgs, IContext } from '../types/IMyAgentPlugin'
 
 const schema = { 
   components: { 
