@@ -1674,6 +1674,13 @@ daf-core@^7.0.0-beta.45:
     events "^3.0.0"
     z-schema "^4.2.3"
 
+daf-identity-manager@^7.0.0-beta.45:
+  version "7.0.0-beta.45"
+  resolved "https://registry.yarnpkg.com/daf-identity-manager/-/daf-identity-manager-7.0.0-beta.45.tgz#ac1ce70eeb862686b84e117423c29674756c2362"
+  integrity sha512-BXfZIxaoWwEnEkZby3B/CR2EWDWb2wYLhDPiX0SL7OxzkOskSbntC594Lh38YsER0a8hRWX7VwpnFh6nTQVkeA==
+  dependencies:
+    daf-core "^7.0.0-beta.45"
+
 daf-key-manager@^7.0.0-beta.45:
   version "7.0.0-beta.45"
   resolved "https://registry.yarnpkg.com/daf-key-manager/-/daf-key-manager-7.0.0-beta.45.tgz#bb121c44786e926734d6179e135e0891a9e1e0af"
