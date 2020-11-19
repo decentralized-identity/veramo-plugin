@@ -1,1 +1,6 @@
+build
 node_modules
+tmp
+agent.yml
+database.sqlite
+tsconfig.tsbuildinfo

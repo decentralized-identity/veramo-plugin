@@ -1,6 +1,9 @@
 import { IKey } from 'daf-core'
 import { AbstractKeyStore } from 'daf-key-manager'
 
+/**
+ * @alpha
+ */
 export class KeyStore extends AbstractKeyStore {
   async get({ kid }: { kid: string }): Promise<IKey> {
     throw Error('KeyStore get not implemented')

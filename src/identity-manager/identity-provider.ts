@@ -3,6 +3,9 @@ import { AbstractIdentityProvider } from 'daf-identity-manager'
 
 type IContext = IAgentContext<IKeyManager>
 
+/**
+ * @alpha
+ */
 export class IdentityProvider extends AbstractIdentityProvider {
   private defaultKms: string
 

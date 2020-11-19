@@ -1,0 +1,61 @@
+{
+  "credentialSubject": {
+    "interfaces": {
+      "IMyAgentPlugin": {
+        "components": {
+          "schemas": {
+            "IMyAgentPluginFooArgs": {
+              "type": "object",
+              "properties": {
+                "did": {
+                  "type": "string",
+                  "description": "Decentralized identifier"
+                },
+                "bar": {
+                  "type": "string",
+                  "description": "Lorem ipsum"
+                },
+                "foo": {
+                  "type": "string",
+                  "description": "Dolorem"
+                }
+              },
+              "required": [
+                "did",
+                "bar",
+                "foo"
+              ],
+              "description": "Arguments needed for myPluginFoo"
+            }
+          },
+          "methods": {
+            "myPluginFoo": {
+              "description": "Method description",
+              "arguments": {
+                "$ref": "#/components/schemas/IMyAgentPluginFooArgs"
+              },
+              "returnType": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "issuer": {
+    "id": "did:ethr:rinkeby:0xa5ceab5250fed36b868f83e87e87aa48ad8b3dea"
+  },
+  "type": [
+    "VerifiableCredential",
+    "AgentPluginSchema"
+  ],
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "issuanceDate": "2020-11-17T10:35:49.000Z",
+  "proof": {
+    "type": "JwtProof2020",
+    "jwt": "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJ2YyI6eyJjcmVkZW50aWFsU3ViamVjdCI6eyJpbnRlcmZhY2VzIjp7IklNeUFnZW50UGx1Z2luIjp7ImNvbXBvbmVudHMiOnsic2NoZW1hcyI6eyJJTXlBZ2VudFBsdWdpbkZvb0FyZ3MiOnsidHlwZSI6Im9iamVjdCIsInByb3BlcnRpZXMiOnsiZGlkIjp7InR5cGUiOiJzdHJpbmciLCJkZXNjcmlwdGlvbiI6IkRlY2VudHJhbGl6ZWQgaWRlbnRpZmllciJ9LCJiYXIiOnsidHlwZSI6InN0cmluZyIsImRlc2NyaXB0aW9uIjoiTG9yZW0gaXBzdW0ifSwiZm9vIjp7InR5cGUiOiJzdHJpbmciLCJkZXNjcmlwdGlvbiI6IkRvbG9yZW0ifX0sInJlcXVpcmVkIjpbImRpZCIsImJhciIsImZvbyJdLCJkZXNjcmlwdGlvbiI6IkFyZ3VtZW50cyBuZWVkZWQgZm9yIG15UGx1Z2luRm9vIn19LCJtZXRob2RzIjp7Im15UGx1Z2luRm9vIjp7ImRlc2NyaXB0aW9uIjoiTWV0aG9kIGRlc2NyaXB0aW9uIiwiYXJndW1lbnRzIjp7IiRyZWYiOiIjL2NvbXBvbmVudHMvc2NoZW1hcy9JTXlBZ2VudFBsdWdpbkZvb0FyZ3MifSwicmV0dXJuVHlwZSI6eyJ0eXBlIjoic3RyaW5nIn19fX19fX0sIkBjb250ZXh0IjpbImh0dHBzOi8vd3d3LnczLm9yZy8yMDE4L2NyZWRlbnRpYWxzL3YxIl0sInR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiLCJBZ2VudFBsdWdpblNjaGVtYSJdfSwibmJmIjoxNjA1NjA5MzQ5LCJpc3MiOiJkaWQ6ZXRocjpyaW5rZWJ5OjB4YTVjZWFiNTI1MGZlZDM2Yjg2OGY4M2U4N2U4N2FhNDhhZDhiM2RlYSJ9.36MYnFljOwYN5c1x6-u8nPBYZkmXNtEUswb34DbPeycQI7tWl5eqHlMj8uSyUbyzPNoCAB0Vh8fuNGxqsFnNMA"
+  }
+}

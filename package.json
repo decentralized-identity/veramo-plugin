@@ -7,21 +7,30 @@
   "module": "build/index.m.js",
   "esmodule": "build/index.modern.js",
   "types": "build/index.d.ts",
+  "daf": {
+    "pluginInterfaces": {
+      "IMyAgentPlugin": "./src/types/IMyAgentPlugin.ts"
+    }
+  },
   "scripts": {
-    "build": "microbundle",
-    "watch": "microbundle watch"
+    "build": "tsc",
+    "watch": "tsc -b --watch",
+    "clean": "rm -rf tmp && rm database.sqlite && rm agent.yml && rm -rf build && rm tsconfig.tsbuildinfo",
+    "generate-schema": "daf generatePluginSchema"
   },
   "license": "MIT",
   "devDependencies": {
+    "daf-cli": "^7.0.0-beta.45",
     "daf-core": "^7.0.0-beta.45",
     "daf-identity-manager": "^7.0.0-beta.45",
     "daf-key-manager": "^7.0.0-beta.45",
-    "microbundle": "^0.12.4"
+    "typescript": "^4.0.5"
   },
   "files": [
     "build/**/*",
     "src/**/*",
     "README.md",
+    "plugin-schema.json",
     "LICENSE"
   ],
   "dependencies": {}

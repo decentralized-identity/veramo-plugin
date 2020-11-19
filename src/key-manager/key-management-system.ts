@@ -1,6 +1,9 @@
 import { TKeyType, IKey, EcdsaSignature } from 'daf-core'
 import { AbstractKeyManagementSystem } from 'daf-key-manager'
 
+/**
+ * @alpha
+ */
 export class KeyManagementSystem extends AbstractKeyManagementSystem {
 
   async createKey({ type }: { type: TKeyType }): Promise<Omit<IKey, 'kms'>> {

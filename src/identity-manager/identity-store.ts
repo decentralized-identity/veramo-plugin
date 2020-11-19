@@ -1,6 +1,9 @@
 import { IIdentity } from 'daf-core'
 import { AbstractIdentityStore } from 'daf-identity-manager'
 
+/**
+ * @alpha
+ */
 export class IdentityStore extends AbstractIdentityStore {
   async get({ did, alias, provider }: { did: string; alias: string; provider: string }): Promise<IIdentity> {
     throw Error('IdentityStore get not implemented')

@@ -1,5 +1,8 @@
 import { AbstractSecretBox } from 'daf-key-manager'
 
+/**
+ * @alpha
+ */
 export class SecretBox extends AbstractSecretBox {
   constructor(private secretKey: string) {
     super()
