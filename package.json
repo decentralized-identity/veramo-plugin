@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "source": "src/index.ts",
   "main": "build/index.js",
-  "umd:main": "build/index.umd.js",
-  "module": "build/index.m.js",
-  "esmodule": "build/index.modern.js",
   "types": "build/index.d.ts",
   "daf": {
     "pluginInterfaces": {
