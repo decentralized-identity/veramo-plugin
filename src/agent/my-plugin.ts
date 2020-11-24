@@ -1,6 +1,6 @@
 import { IAgentPlugin } from 'daf-core'
 import { IMyAgentPlugin, IMyAgentPluginFooArgs, IContext } from '../types/IMyAgentPlugin'
-const pluginSchema = require('../../agent-plugin-schema')
+import { schema } from '../index'
 
 /** 
  * {@inheritDoc IMyAgentPlugin}
@@ -8,7 +8,7 @@ const pluginSchema = require('../../agent-plugin-schema')
  */
 export class MyAgentPlugin implements IAgentPlugin {
   
-  readonly schema = pluginSchema.credentialSubject.interfaces.IMyAgentPlugin
+  readonly schema = schema.IMyAgentPlugin
 
   readonly eventTypes = ['validatedMessage']
   
