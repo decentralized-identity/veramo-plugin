@@ -1,28 +1,28 @@
 {
-  "name": "daf-plugin",
+  "name": "veramo-plugin",
   "version": "1.0.0",
   "source": "src/index.ts",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "daf": {
+  "veramo": {
     "pluginInterfaces": {
       "IMyAgentPlugin": "./src/types/IMyAgentPlugin.ts"
     }
   },
   "scripts": {
     "build": "tsc",
-    "generate-plugin-schema": "yarn daf generate-plugin-schema",
-    "start": "daf server",
+    "generate-plugin-schema": "yarn veramo dev generate-plugin-schema",
+    "start": "veramo server",
     "watch": "tsc -b --watch",
     "clean": "rm -rf tmp && rm database.sqlite && rm -rf build && rm tsconfig.tsbuildinfo",
-    "upgrade-daf": "yarn add -D daf-cli@beta daf-core@beta daf-identity-manager@beta daf-key-manager@beta"
+    "upgrade-veramo": "yarn add -D @veramo/cli @veramo/core @veramo/did-manager @veramo/key-manager"
   },
   "license": "MIT",
   "devDependencies": {
-    "daf-cli": "^7.0.0-beta.51",
-    "daf-core": "^7.0.0-beta.51",
-    "daf-identity-manager": "^7.0.0-beta.51",
-    "daf-key-manager": "^7.0.0-beta.51",
+    "@veramo/cli": "^1.0.1",
+    "@veramo/core": "^1.0.1",
+    "@veramo/did-manager": "^1.0.1",
+    "@veramo/key-manager": "^1.0.1",
     "typescript": "^4.0.5"
   },
   "files": [

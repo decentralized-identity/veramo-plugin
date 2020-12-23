@@ -1,4 +1,4 @@
-import { IAgentPlugin } from 'daf-core'
+import { IAgentPlugin } from '@veramo/core'
 import { IMyAgentPlugin, IMyAgentPluginFooArgs, IContext } from '../types/IMyAgentPlugin'
 import { schema } from '../index'
 

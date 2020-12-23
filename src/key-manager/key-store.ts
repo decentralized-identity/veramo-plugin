@@ -1,5 +1,5 @@
-import { IKey } from 'daf-core'
-import { AbstractKeyStore } from 'daf-key-manager'
+import { IKey } from '@veramo/core'
+import { AbstractKeyStore } from '@veramo/key-manager'
 
 /**
  * @alpha

@@ -1,5 +1,5 @@
-import { TKeyType, IKey, EcdsaSignature } from 'daf-core'
-import { AbstractKeyManagementSystem } from 'daf-key-manager'
+import { TKeyType, IKey, EcdsaSignature } from '@veramo/core'
+import { AbstractKeyManagementSystem } from '@veramo/key-manager'
 
 /**
  * @alpha
