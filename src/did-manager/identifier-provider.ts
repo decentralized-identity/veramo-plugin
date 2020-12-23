@@ -1,12 +1,12 @@
-import { IIdentity, IKey, IService, IAgentContext, IKeyManager } from 'daf-core'
-import { AbstractIdentityProvider } from 'daf-identity-manager'
+import { IIdentifier, IKey, IService, IAgentContext, IKeyManager } from '@veramo/core'
+import { AbstractIdentifierProvider } from '@veramo/did-manager'
 
 type IContext = IAgentContext<IKeyManager>
 
 /**
  * @alpha
  */
-export class IdentityProvider extends AbstractIdentityProvider {
+export class IdentifierProvider extends AbstractIdentifierProvider {
   private defaultKms: string
 
   constructor(options: { defaultKms: string }) {
@@ -14,20 +14,20 @@ export class IdentityProvider extends AbstractIdentityProvider {
     this.defaultKms = options.defaultKms
   }
 
-  async createIdentity(
+  async createIdentifier(
     { kms, alias }: { kms?: string; alias?: string },
     context: IContext,
-  ): Promise<Omit<IIdentity, 'provider'>> {
+  ): Promise<Omit<IIdentifier, 'provider'>> {
     throw Error('IdentityProvider createIdentity not implemented')
   }
 
-  async deleteIdentity(identity: IIdentity, context: IContext): Promise<boolean> {
+  async deleteIdentifier(identity: IIdentifier, context: IContext): Promise<boolean> {
     throw Error('IdentityProvider deleteIdentity not implemented')
     return true
   }
 
   async addKey(
-    { identity, key, options }: { identity: IIdentity; key: IKey; options?: any },
+    { identifier, key, options }: { identifier: IIdentifier; key: IKey; options?: any },
     context: IContext,
   ): Promise<any> {
     throw Error('IdentityProvider addKey not implemented')
@@ -35,7 +35,7 @@ export class IdentityProvider extends AbstractIdentityProvider {
   }
 
   async addService(
-    { identity, service, options }: { identity: IIdentity; service: IService; options?: any },
+    { identifier, service, options }: { identifier: IIdentifier; service: IService; options?: any },
     context: IContext,
   ): Promise<any> {
     throw Error('IdentityProvider addService not implemented')
@@ -43,7 +43,7 @@ export class IdentityProvider extends AbstractIdentityProvider {
   }
 
   async removeKey(
-    args: { identity: IIdentity; kid: string; options?: any },
+    args: { identifier: IIdentifier; kid: string; options?: any },
     context: IContext,
   ): Promise<any> {
     throw Error('IdentityProvider removeKey not implemented')
@@ -51,7 +51,7 @@ export class IdentityProvider extends AbstractIdentityProvider {
   }
 
   async removeService(
-    args: { identity: IIdentity; id: string; options?: any },
+    args: { identifier: IIdentifier; id: string; options?: any },
     context: IContext,
   ): Promise<any> {
     throw Error('IdentityProvider removeService not implemented')

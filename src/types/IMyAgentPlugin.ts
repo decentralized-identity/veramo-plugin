@@ -1,10 +1,10 @@
-import { IPluginMethodMap, IAgentContext, IIdentityManager, IResolver} from 'daf-core'
+import { IPluginMethodMap, IAgentContext, IDIDManager, IResolver} from '@veramo/core'
 
 /**
  * Plugin context
  * @beta
  */
-export type IContext = IAgentContext<IResolver & IIdentityManager>
+export type IContext = IAgentContext<IResolver & IDIDManager>
 
 /**
  * Arguments needed for myPluginFoo
