@@ -1,4 +1,4 @@
-import { TKeyType, IKey, EcdsaSignature } from '@veramo/core'
+import { TKeyType, IKey } from '@veramo/core'
 import { AbstractKeyManagementSystem } from '@veramo/key-manager'
 
 /**
@@ -40,7 +40,7 @@ export class KeyManagementSystem extends AbstractKeyManagementSystem {
     throw Error('KeyManagementSystem signEthTX not implemented')
   }
 
-  async signJWT({ key, data }: { key: IKey; data: string }): Promise<EcdsaSignature> {
+  async signJWT({ key, data }: { key: IKey; data: string }): Promise<string> {
     throw Error('KeyManagementSystem signJWT not implemented')
   }
 }
