@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "config:base",
+    "group:allNonMajor"
+  ],
+  "labels": [
+    "maintenance"
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": [
+        "veramo"
+      ],
+      "groupName": "veramo-dependencies"
+    },
+    {
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "groupName": "devDeps",
+      "schedule": [
+        "weekly"
+      ]
+    }
+  ],
+  "automergeType": "branch",
+  "automerge": true
+}
