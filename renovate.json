@@ -19,7 +19,7 @@
       ],
       "groupName": "devDeps",
       "schedule": [
-        "weekly"
+        "before 5am on Monday"
       ]
     }
   ],
