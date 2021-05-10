@@ -17,13 +17,12 @@ export class MyAgentPlugin implements IAgentPlugin {
   }
 
   public async onEvent(event: { type: string; data: any }, context: IContext) {
-    console.log(event.data)
+    await context.agent.emit('my-event', { foo: event.data.id })
   }
 
   /** {@inheritDoc IMyAgentPlugin.myPluginFoo} */
   private async myPluginFoo(args: IMyAgentPluginFooArgs, context: IContext): Promise<string> {
     const didDoc = await context.agent.resolveDid({ didUrl: args.did })
-    console.log(didDoc)
     return args.bar
   }
 }
