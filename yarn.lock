@@ -1353,7 +1353,7 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^26.0.23":
+"@types/jest@26.0.23":
   version "26.0.23"
   resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.23.tgz#a1b7eab3c503b80451d019efb588ec63522ee4e7"
   integrity sha512-ZHLmWMJ9jJ9PTiT58juykZpL7KjwJywFN3Rr2pTSkyQfydf/rk22yS7W8p5DaVUMQ2BQC7oYiU3FjbTM/mYrOA==
@@ -1458,7 +1458,7 @@
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.2.tgz#808c9fa7e4517274ed555fa158f2de4b4f468e71"
   integrity sha512-HrCIVMLjE1MOozVoD86622S7aunluLb2PJdPfb3nYiEtohm8mIB/vyv0Fd37AdeMFrTUQXEunw78YloMA3Qilg==
 
-"@veramo/cli@^1.2.1":
+"@veramo/cli@1.2.1":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@veramo/cli/-/cli-1.2.1.tgz#000408fcde2480cb81913a68a3a239092c482744"
   integrity sha512-OWxVpvSnQ38o4NwCb3mKajCaVmQOjI4TnDJiae+2QgMvtMUZnqGPuD5rCaSS3NebexuXkvbxHjlbzYfiLr0YiA==
@@ -1575,7 +1575,7 @@
     did-jwt "5.2.0"
     did-resolver "3.1.0"
 
-"@veramo/did-manager@^1.2.0":
+"@veramo/did-manager@1.2.0", "@veramo/did-manager@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@veramo/did-manager/-/did-manager-1.2.0.tgz#ebc2e98f42a2ad39c88618bbbf3c3d7f5bff0096"
   integrity sha512-PWsvgvm6sSsYN+thDwiQfqibFFOq5lPueObe+1JbQ5UmwKvHoPI/NRP6wu7lAlYJkiqYMYry95SgL9c4LP5YNg==
@@ -1625,7 +1625,7 @@
     cross-fetch "^3.1.4"
     debug "^4.1.1"
 
-"@veramo/key-manager@^1.2.0":
+"@veramo/key-manager@1.2.0", "@veramo/key-manager@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@veramo/key-manager/-/key-manager-1.2.0.tgz#0dc9d4dd4bf2ca51b87c64b966d0ea74f6b2424e"
   integrity sha512-4g+FccQ4+aGoXJBOYPQh02ryVoKanb8cbO8ys5QD4QbsHP8eJF+BC2/bRXJPjAecJ93Huo/GEkTai1XnPDbTQg==
@@ -4515,7 +4515,7 @@ jest-worker@^26.6.2:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
 
-jest@^26.6.3:
+jest@26.6.3:
   version "26.6.3"
   resolved "https://registry.yarnpkg.com/jest/-/jest-26.6.3.tgz#40e8fdbe48f00dfa1f0ce8121ca74b88ac9148ef"
   integrity sha512-lGS5PXGAzR4RF7V5+XObhqz2KZIDUA1yD0DG6pBVmy10eh0ZIXQImRuzocsI/N2XZ1GrLFwTS27In2i2jlpq1Q==
@@ -6816,7 +6816,7 @@ tr46@^2.0.2:
   resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.3.9.tgz#717b8f220cc0bb7b44e40514c22b2e8bbc70d8b9"
   integrity sha1-cXuPIgzAu3tE5AUUwisui7xw2Lk=
 
-ts-jest@^26.5.6:
+ts-jest@26.5.6:
   version "26.5.6"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.5.6.tgz#c32e0746425274e1dfe333f43cd3c800e014ec35"
   integrity sha512-rua+rCP8DxpA8b4DQD/6X2HQS8Zy/xzViVYfEs2OQu68tkCuKLV0Md8pmX55+W24uRIyAsf/BajRfxOs+R2MKA==
@@ -6938,7 +6938,7 @@ typeorm@0.2.32:
     yargs "^16.2.0"
     zen-observable-ts "^1.0.0"
 
-typescript@^4.2.4, typescript@~4.2.3, typescript@~4.2.4:
+typescript@4.2.4, typescript@~4.2.3, typescript@~4.2.4:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.4.tgz#8610b59747de028fda898a8aef0e103f156d0961"
   integrity sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==
