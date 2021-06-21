@@ -27,7 +27,7 @@
     "@veramo/key-manager": "1.2.0",
     "jest": "27.0.4",
     "ts-jest": "27.0.3",
-    "typescript": "4.3.2"
+    "typescript": "4.3.4"
   },
   "files": [
     "build/**/*",
