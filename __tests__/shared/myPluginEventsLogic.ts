@@ -18,7 +18,7 @@ export default (testContext: {
     afterAll(testContext.tearDown)
 
     it('should emit my-event', async () => {
-      expect.assertions(1);
+      expect.assertions(1)
       const handler = jest.fn()
       //@ts-ignore
       agent.eventBus.on('my-event', handler)
@@ -30,9 +30,9 @@ export default (testContext: {
         metaData: [{ type: 'test' }],
       })
 
-      expect(handler).toBeCalledWith({ foo: '6b431e5ae15249bda0b9d9140940da271e0f5e2befdc22453feccb27bd9ad95517e98a8576cad695c0f1c4bd2ae23115b756ebe3c85abea116b124bc326c4ab9'})
+      expect(handler).toBeCalledWith({
+        foo: '6b431e5ae15249bda0b9d9140940da271e0f5e2befdc22453feccb27bd9ad95517e98a8576cad695c0f1c4bd2ae23115b756ebe3c85abea116b124bc326c4ab9',
+      })
     })
-
-    
   })
 }

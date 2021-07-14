@@ -51,7 +51,7 @@ constants:
     - getVerifiableCredentialsForSdr
     - validatePresentationAgainstSdr
 
-# Data base
+# Database
 dbConnection:
   $require: typeorm?t=function#createConnection
   $args:
@@ -135,6 +135,7 @@ messageHandler:
   $require: '@veramo/message-handler#MessageHandler'
   $args:
     - messageHandlers:
+        # order matters
         - $require: '@veramo/did-comm#DIDCommMessageHandler'
         - $require: '@veramo/did-jwt#JwtMessageHandler'
         - $require: '@veramo/credential-w3c#W3cMessageHandler'
@@ -165,20 +166,7 @@ didResolver:
 ethr-did-resolver:
   $require: ethr-did-resolver?t=function&p=/ethr#getResolver
   $args:
-    - networks:
-        - name: mainnet
-          rpcUrl: https://mainnet.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: rinkeby
-          rpcUrl: https://rinkeby.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: ropsten
-          rpcUrl: https://ropsten.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: kovan
-          rpcUrl: https://kovan.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: goerli
-          rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-        - name: private
-          rpcUrl: http://localhost:8545/
-          registry: '0x05cc574b19a3c11308f761b3d7263bd8608bc532'
+    - infuraProjectId: 5ffc47f65c4042ce847ef66a3fa70d4c
 
 web-did-resolver:
   $require: web-did-resolver?t=function&p=/web#getResolver
@@ -205,6 +193,7 @@ keyManager:
       kms:
         local:
           $require: '@veramo/kms-local#KeyManagementSystem'
+        # install your own Key Management System
         my:
           $require: ./build#KeyManagementSystem
 
@@ -238,30 +227,6 @@ didManager:
               rpcUrl: https://rinkeby.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
               gas: 1000001
               ttl: 31104001
-        did:ethr:ropsten:
-          $require: '@veramo/did-provider-ethr#EthrDIDProvider'
-          $args:
-            - defaultKms: local
-              network: ropsten
-              rpcUrl: https://ropsten.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-              gas: 1000001
-              ttl: 31104001
-        did:ethr:kovan:
-          $require: '@veramo/did-provider-ethr#EthrDIDProvider'
-          $args:
-            - defaultKms: local
-              network: kovan
-              rpcUrl: https://kovan.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-              gas: 1000001
-              ttl: 31104001
-        did:ethr:goerli:
-          $require: '@veramo/did-provider-ethr#EthrDIDProvider'
-          $args:
-            - defaultKms: local
-              network: goerli
-              rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
-              gas: 1000001
-              ttl: 31104001
         did:web:
           $require: '@veramo/did-provider-web#WebDIDProvider'
           $args:
@@ -286,4 +251,5 @@ agent:
         - $require: '@veramo/data-store#DataStoreORM'
           $args:
             - $ref: /dbConnection
+          # install your plugin to the `@veramo/cli` agent locally
         - $require: ./build#MyAgentPlugin
