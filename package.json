@@ -37,6 +37,6 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@veramo/core": "^1.2.0"
+    "@veramo/core": "^2.0.0"
   }
 }
