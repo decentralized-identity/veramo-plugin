@@ -4,12 +4,44 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "OpenAPI server",
+      "name": "debug OpenAPI server",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/node_modules/@veramo/cli/build/cli.js",
-      "args": ["server"]
+      "program": "${workspaceFolder}/node_modules/@veramo/cli/bin/veramo.js",
+      "args": [
+        "--config",
+        "${workspaceFolder}/packages/cli/default/default.yml",
+        "server"
+      ],
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "**/node_modules/**"
+      ],
+      "autoAttachChildProcesses": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "debug tests",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "--runInBand",
+        "--coverage=false",
+        "--config=jest.json"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+      },
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "**/node_modules/**"
+      ]
     }
   ]
 }
