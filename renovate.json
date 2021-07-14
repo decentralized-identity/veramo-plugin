@@ -6,6 +6,8 @@
   "labels": [
     "maintenance"
   ],
+  "automergeType": "branch",
+  "automerge": true,
   "packageRules": [
     {
       "packagePatterns": [
@@ -22,7 +24,5 @@
         "before 5am on Monday"
       ]
     }
-  ],
-  "automergeType": "branch",
-  "automerge": true
+  ]
 }
