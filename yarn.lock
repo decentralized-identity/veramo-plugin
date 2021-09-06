@@ -1678,10 +1678,10 @@
   resolved "https://registry.yarnpkg.com/@types/zen-observable/-/zen-observable-0.8.2.tgz#808c9fa7e4517274ed555fa158f2de4b4f468e71"
   integrity sha512-HrCIVMLjE1MOozVoD86622S7aunluLb2PJdPfb3nYiEtohm8mIB/vyv0Fd37AdeMFrTUQXEunw78YloMA3Qilg==
 
-"@veramo/cli@2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@veramo/cli/-/cli-2.1.1.tgz#8f3be0c5bf9e8ac31a3e5f08aed93375cf2831fc"
-  integrity sha512-adc4LqtvbdJ5bqzAFJhkpbeHkZYx77DGT6vu3+MJTy9kWKTgRDVE4g0KUCZTwoXWIaL92xgcDQdvH16paNLPrw==
+"@veramo/cli@2.1.3":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@veramo/cli/-/cli-2.1.3.tgz#1809068cc0ae4e9f886111782a1fd2c1d8293c10"
+  integrity sha512-oZZUi1KwTfesCIBsezEuQ+Uw58fK1OgfXotWLBhjtYmS+KuiaYI/8+O0AH5oX/aZ8VYLW/32A/arI0MZAAjPYw==
   dependencies:
     "@microsoft/api-extractor" "7.18.4"
     "@microsoft/api-extractor-model" "7.13.4"
@@ -1690,7 +1690,7 @@
     "@veramo/core" "^2.1.0"
     "@veramo/credential-w3c" "^2.1.0"
     "@veramo/data-store" "^2.1.0"
-    "@veramo/did-comm" "^2.1.0"
+    "@veramo/did-comm" "^2.1.3"
     "@veramo/did-discovery" "^2.1.0"
     "@veramo/did-jwt" "^2.1.0"
     "@veramo/did-manager" "^2.1.0"
@@ -1784,10 +1784,10 @@
     debug "^4.1.1"
     typeorm "0.2.34"
 
-"@veramo/did-comm@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@veramo/did-comm/-/did-comm-2.1.0.tgz#e61e8c41b2b210385405182589934f0292f8e479"
-  integrity sha512-uV/NiBpV2+cx9NXEkYQfJSv8YsI0k4wPmaWm4bvJb+JWvwJd5r0rIhimKopqxEfFThDb5Jh9Agq0f0fxOgS4iA==
+"@veramo/did-comm@^2.1.3":
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/@veramo/did-comm/-/did-comm-2.1.3.tgz#28a353baa9dfa21cf65361da9978034d9062600c"
+  integrity sha512-BXiM5kdmL1n/QRSQ48RPvbhrbShz3aTsI00ED5BNaHfMsaHLJnpTBzkVoLs/N7gDsEhFqNFWvqfLOK2kikkKMw==
   dependencies:
     "@stablelib/ed25519" "^1.0.2"
     "@veramo/core" "^2.1.0"
