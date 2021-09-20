@@ -2,7 +2,7 @@ import { AbstractSecretBox } from '@veramo/key-manager'
 
 /**
  * This type of class would allow you to define your own encryption for the key material that a Veramo agent manages.
- * `@veramo/key-manager` can be configured with a class like this to customize the way it stores key material.
+ * `@veramo/key-manager#PrivateKeyStore` and  can be configured with a class like this to customize the way it stores key material.
  *
  * If you don't want to customize this, then it is safe to remove from the template.
  *

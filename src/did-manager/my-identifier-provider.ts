@@ -4,9 +4,9 @@ import { AbstractIdentifierProvider } from '@veramo/did-manager'
 type IContext = IAgentContext<IKeyManager>
 
 /**
- * You can use this template for an IdentifierProvider implementation.
+ * You can use this template for an `AbstractIdentifierProvider` implementation.
  *
- * This interface defines the different providers used by `@veramo/did-manager` to implement
+ * Implementations of this interface are used by `@veramo/did-manager` to implement
  * CRUD operations for various DID methods.
  *
  * If you wish to implement support for a particular DID method, this is the type of class
@@ -16,7 +16,7 @@ type IContext = IAgentContext<IKeyManager>
  *
  * @alpha
  */
-export class IdentifierProvider extends AbstractIdentifierProvider {
+export class MyIdentifierProvider extends AbstractIdentifierProvider {
   private defaultKms: string
 
   constructor(options: { defaultKms: string }) {

@@ -1,11 +1,21 @@
+##
+## This is an example configuration that uses the plugin and customizations from this template
+## alongside other default plugins to create an agent using `@veramo/cli`.
+##
+## Look for the `template: ` prefix in comments to see where things fit
+##
+
 version: 3.0
 
 constants:
   baseUrl: http://localhost:3335
   port: 3335
+# please use your own X25519 key, this is only an example
   secretKey: 29739248cad1bd1a0fc4d9b75cd4d2990de535baf5caadfdf8d8f86664aa830c
   databaseFile: ./database.sqlite
   methods:
+    # This is the list of methods that may be executed on this agent.
+    # Methods that are NOT listed here cannot be executed, even if the plugins that implement them are installed.
     - keyManagerGetKeyManagementSystems
     - keyManagerCreate
     - keyManagerGet
@@ -13,6 +23,8 @@ constants:
     - keyManagerImport
     - keyManagerEncryptJWE
     - keyManagerDecryptJWE
+    - keyManagerSign
+    - keyManagerSharedSecret
     - keyManagerSignJWT
     - keyManagerSignEthTX
     - didManagerGetProviders
@@ -27,6 +39,7 @@ constants:
     - didManagerAddService
     - didManagerRemoveService
     - resolveDid
+    - getDIDComponentById
     - dataStoreGetMessage
     - dataStoreSaveMessage
     - dataStoreGetVerifiableCredential
@@ -44,12 +57,17 @@ constants:
     - dataStoreORMGetVerifiablePresentations
     - dataStoreORMGetVerifiablePresentationsCount
     - handleMessage
+    - packDIDCommMessage
+    - unpackDIDCommMessage
+    - sendDIDCommMessage
     - sendMessageDIDCommAlpha1
     - createVerifiablePresentation
     - createVerifiableCredential
     - createSelectiveDisclosureRequest
     - getVerifiableCredentialsForSdr
     - validatePresentationAgainstSdr
+    # template: add your plugin methods here too. This assumes that your plugin is added to the agent. See below, toward the end of this config file.
+    - myPluginFoo
 
 # Database
 dbConnection:
@@ -58,7 +76,10 @@ dbConnection:
     - type: sqlite
       database:
         $ref: /constants/databaseFile
-      synchronize: true
+      synchronize: false
+      migrationsRun: true
+      migrations:
+        $require: '@veramo/data-store?t=object#migrations'
       logging: false
       entities:
         $require: '@veramo/data-store?t=object#Entities'
@@ -94,6 +115,7 @@ server:
     - - /agent
       - $require: '@veramo/remote-server?t=function#apiKeyAuth'
         $args:
+          # Please configure your own API key. This is used when executing agent methods through ${baseUrl}/agent or ${baseUrl}/api-docs
           - apiKey: test123
       - $require: '@veramo/remote-server?t=function#AgentRouter'
         $args:
@@ -184,31 +206,36 @@ keyManager:
   $require: '@veramo/key-manager#KeyManager'
   $args:
     - store:
-        $require: '@veramo/data-store#KeyStore'
+        $require: '@veramo/data-store#KeyStore' # template: or you can use './build#MyKeyStore' instead
         $args:
           - $ref: /dbConnection
-          - $require: '@veramo/kms-local#SecretBox'
-            $args:
-              - $ref: /constants/secretKey
       kms:
         local:
           $require: '@veramo/kms-local#KeyManagementSystem'
-        # install your own Key Management System
+          $args:
+            - $require: '@veramo/data-store#PrivateKeyStore' # template: or you can use './build#MyPrivateKeyStore' instead
+              $args:
+                - $ref: /dbConnection
+                - $require: '@veramo/kms-local#SecretBox'
+                  $args:
+                    - $ref: /constants/secretKey
+        # template: you can install your own Key Management System implementation too
         my:
-          $require: ./build#KeyManagementSystem
+          $require: ./build#MyKeyManagementSystem
 
 # DID Manager
 didManager:
   $require: '@veramo/did-manager#DIDManager'
   $args:
     - store:
-        $require: '@veramo/data-store#DIDStore'
+        $require: '@veramo/data-store#DIDStore' # template: or you can use './build#MyDIDStore'
         $args:
           - $ref: /dbConnection
       defaultProvider: did:ethr:rinkeby
       providers:
+        # template: you can install your customized DID provider like so
         did:my:
-          $require: ./build#IdentifierProvider
+          $require: ./build#MyIdentifierProvider
           $args:
             - defaultKms: local
         did:ethr:
@@ -251,5 +278,5 @@ agent:
         - $require: '@veramo/data-store#DataStoreORM'
           $args:
             - $ref: /dbConnection
-          # install your plugin to the `@veramo/cli` agent locally
+          # template: install your plugin on the `@veramo/cli` agent
         - $require: ./build#MyAgentPlugin

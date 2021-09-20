@@ -1,5 +1,5 @@
 import { IAgentPlugin } from '@veramo/core'
-import { IMyAgentPlugin, IMyAgentPluginFooArgs, IContext, IMyAgentPluginFooResult } from '../types/IMyAgentPlugin'
+import { IMyAgentPlugin, IMyAgentPluginFooArgs, IRequiredContext, IMyAgentPluginFooResult } from '../types/IMyAgentPlugin'
 import { schema } from '../index'
 
 /**
@@ -15,11 +15,11 @@ export class MyAgentPlugin implements IAgentPlugin {
   }
 
   // list the event types that this plugin cares about.
-  // When the agent emits an event of these types, `this.onEvent()` will get called.
+  // When the agent emits an event of these types, `MyAgentPlugin.onEvent()` will get called.
   readonly eventTypes = ['validatedMessage']
 
   // the event handler for the types listed in `eventTypes`
-  public async onEvent(event: { type: string; data: any }, context: IContext) {
+  public async onEvent(event: { type: string; data: any }, context: IRequiredContext) {
     // you can emit other events
     await context.agent.emit('my-event', { foo: event.data.id })
     // or call other agent methods that are declared in the context
@@ -27,8 +27,8 @@ export class MyAgentPlugin implements IAgentPlugin {
   }
 
   /** {@inheritDoc IMyAgentPlugin.myPluginFoo} */
-  private async myPluginFoo(args: IMyAgentPluginFooArgs, context: IContext): Promise<IMyAgentPluginFooResult> {
-    // you can call other agent methods (that are declared in the context)
+  private async myPluginFoo(args: IMyAgentPluginFooArgs, context: IRequiredContext): Promise<IMyAgentPluginFooResult> {
+    // you can call other agent methods (that are declared in the `IRequiredContext`)
     const didDoc = await context.agent.resolveDid({ didUrl: args.did })
     // or emit some events
     await context.agent.emit('my-other-event', { foo: 'hello' })
