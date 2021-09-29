@@ -1,4 +1,4 @@
-import { TKeyType, IKey } from '@veramo/core'
+import { TKeyType, IKey, RequireOnly } from '@veramo/core'
 import { AbstractKeyManagementSystem } from '@veramo/key-manager'
 
 /**
@@ -15,35 +15,24 @@ import { AbstractKeyManagementSystem } from '@veramo/key-manager'
  * @alpha
  */
 export class KeyManagementSystem extends AbstractKeyManagementSystem {
-  sign(args: { key: IKey; algorithm?: string; data: Uint8Array }): Promise<string> {
+  importKey(args: RequireOnly<IKey, 'privateKeyHex' | 'type' | 'kms'>): Promise<Pick<IKey, 'type' | 'kms' | 'kid' | 'publicKeyHex' | 'meta'>> {
     throw new Error('Method not implemented.')
   }
-
-  sharedSecret(args: { myKey: IKey; theirKey: Pick<IKey, 'type' | 'publicKeyHex'> }): Promise<string> {
+  listKeys(): Promise<Pick<IKey, 'type' | 'kms' | 'kid' | 'publicKeyHex' | 'meta'>[]> {
     throw new Error('Method not implemented.')
   }
-
-  async createKey({ type, meta }: { type: TKeyType; meta: any }): Promise<Omit<IKey, 'kms'>> {
-    let key: Omit<IKey, 'kms'>
-
-    switch (type) {
-      case 'Ed25519':
-        throw Error('KeyManagementSystem createKey Ed25519 not implemented')
-        break
-      case 'Secp256k1':
-        throw Error('KeyManagementSystem createKey Secp256k1 not implemented')
-        break
-      case 'X25519':
-        throw Error('KeyManagementSystem createKey X25519 not implemented')
-        break
-      default:
-        throw Error('Key type not supported by this KMS: ' + type)
-    }
-    return key
+  createKey(args: { type: TKeyType; meta?: any }): Promise<Pick<IKey, 'type' | 'kms' | 'kid' | 'publicKeyHex' | 'meta'>> {
+    throw new Error('Method not implemented.')
   }
-
-  async deleteKey(args: { kid: string }) {
-    throw Error('KeyManagementSystem deleteKey not implemented')
-    return true
+  deleteKey(args: { kid: string }): Promise<boolean> {
+    throw new Error('Method not implemented.')
   }
+  sign(args: { [x: string]: any; keyRef: Pick<IKey, 'kid'>; algorithm?: string | undefined; data: Uint8Array }): Promise<string> {
+    throw new Error('Method not implemented.')
+  }
+  sharedSecret(args: { myKeyRef: Pick<IKey, 'kid'>; theirKey: Pick<IKey, 'type' | 'publicKeyHex'> }): Promise<string> {
+    throw new Error('Method not implemented.')
+  }
+  
+  
 }
