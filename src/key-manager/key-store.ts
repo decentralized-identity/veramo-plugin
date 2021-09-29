@@ -10,6 +10,9 @@ import { AbstractKeyStore } from '@veramo/key-manager'
  * @alpha
  */
 export class KeyStore extends AbstractKeyStore {
+  list(args: {}): Promise<Pick<IKey, 'kid' | 'kms' | 'type' | 'publicKeyHex' | 'meta'>[]> {
+    throw new Error('Method not implemented.')
+  }
   async get({ kid }: { kid: string }): Promise<IKey> {
     throw Error('KeyStore get not implemented')
   }
