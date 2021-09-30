@@ -29,7 +29,7 @@ export interface IMyAgentPlugin extends IPluginMethodMap {
    *   Declaring a context type here lets other developers know which other plugins
    *   need to also be installed for this method to work.
    */
-  myPluginFoo(args: IMyAgentPluginFooArgs, context: IContext): Promise<IMyAgentPluginFooResult>
+  myPluginFoo(args: IMyAgentPluginFooArgs, context: IRequiredContext): Promise<IMyAgentPluginFooResult>
 }
 
 /**
@@ -70,8 +70,10 @@ export type IMyAgentPluginFooResult = {
 
 /**
  * This context describes the requirements of this plugin.
- * The agent needs to also use some plugins that implement the interfaces listed here.
+ * For this plugin to function properly, the agent needs to also have other plugins installed that implement the
+ * interfaces declared here.
  * You can also define requirements on a more granular level, for each plugin method or event handler of your plugin.
+ * 
  * @beta
  */
-export type IContext = IAgentContext<IResolver & IDIDManager>
+export type IRequiredContext = IAgentContext<IResolver & IDIDManager>

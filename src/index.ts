@@ -4,9 +4,9 @@
 const schema = require('../plugin.schema.json')
 export { schema }
 export { MyAgentPlugin } from './agent/my-plugin'
-export { KeyManagementSystem } from './key-manager/key-management-system'
-export { KeyStore } from './key-manager/key-store'
-export { SecretBox } from './key-manager/secret-box'
-export { IdentifierProvider } from './did-manager/identifier-provider'
-export { DIDStore } from './did-manager/did-store'
+export { MyKeyManagementSystem } from './key-manager/my-key-management-system'
+export { MyKeyStore } from './key-manager/my-key-store'
+export { SecretBox } from './key-manager/my-secret-box'
+export { MyIdentifierProvider } from './did-manager/my-identifier-provider'
+export { MyDIDStore } from './did-manager/my-did-store'
 export * from './types/IMyAgentPlugin'
