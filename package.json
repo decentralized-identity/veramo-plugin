@@ -21,7 +21,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "27.0.3",
+    "@types/jest": "27.4.0",
     "@veramo/cli": "3.1.0",
     "jest": "27.4.5",
     "ts-jest": "27.1.2",
