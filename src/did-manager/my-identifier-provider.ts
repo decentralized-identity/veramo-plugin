@@ -1,4 +1,4 @@
-import { IIdentifier, IKey, IService, IAgentContext, IKeyManager } from '@veramo/core'
+import { IIdentifier, IKey, IService, IAgentContext, IKeyManager, DIDDocument } from '@veramo/core'
 import { AbstractIdentifierProvider } from '@veramo/did-manager'
 
 type IContext = IAgentContext<IKeyManager>
@@ -60,5 +60,9 @@ export class MyIdentifierProvider extends AbstractIdentifierProvider {
   async removeService(args: { identifier: IIdentifier; id: string; options?: any }, context: IContext): Promise<any> {
     throw Error('IdentityProvider removeService not implemented')
     return { success: true }
+  }
+
+  updateIdentifier?(args: { did: string; document: Partial<DIDDocument>; options?: { [x: string]: any } }, context: IContext): Promise<IIdentifier> {
+    throw new Error('IdentityProvider updateIdentifier not implemented')
   }
 }

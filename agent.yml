@@ -71,7 +71,7 @@ constants:
 
 # Database
 dbConnection:
-  $require: typeorm?t=function#createConnection
+  $require: typeorm#DataSource
   $args:
     - type: sqlite
       database:
@@ -231,7 +231,7 @@ didManager:
         $require: '@veramo/data-store#DIDStore' # template: or you can use './build#MyDIDStore'
         $args:
           - $ref: /dbConnection
-      defaultProvider: did:ethr:rinkeby
+      defaultProvider: did:ethr:goerli
       providers:
         # template: you can install your customized DID provider like so
         did:my:
@@ -246,12 +246,12 @@ didManager:
               rpcUrl: https://mainnet.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
               gas: 1000001
               ttl: 31104001
-        did:ethr:rinkeby:
+        did:ethr:goerli:
           $require: '@veramo/did-provider-ethr#EthrDIDProvider'
           $args:
             - defaultKms: local
-              network: rinkeby
-              rpcUrl: https://rinkeby.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
+              network: goerli
+              rpcUrl: https://goerli.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c
               gas: 1000001
               ttl: 31104001
         did:web:
