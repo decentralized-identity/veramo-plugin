@@ -5,7 +5,7 @@ import {
   IAgentOptions,
   IMessageHandler,
 } from '@veramo/core'
-import { Connection } from 'typeorm'
+import { DataSource } from 'typeorm'
 import { AgentRestClient } from '@veramo/remote-client'
 import express from 'express'
 import { Server } from 'http'
@@ -26,7 +26,7 @@ const basePath = '/agent'
 
 let serverAgent: IAgent
 let restServer: Server
-let dbConnection: Promise<Connection>
+let dbConnection: DataSource
 
 const getAgent = (options?: IAgentOptions) =>
   createAgent<IMyAgentPlugin & IMessageHandler>({
@@ -67,8 +67,13 @@ const setup = async (options?: IAgentOptions): Promise<boolean> => {
 
 const tearDown = async (): Promise<boolean> => {
   restServer.close()
-  await (await dbConnection).close()
-  fs.unlinkSync(databaseFile)
+  try {
+    await dbConnection.dropDatabase()
+    await dbConnection.close()
+    fs.unlinkSync(databaseFile)
+  } catch (e: any) {
+    // nop
+  }
   return true
 }
 
