@@ -2,7 +2,7 @@
 ## This is an example configuration that uses the plugin and customizations from this template
 ## alongside other default plugins to create an agent using `@veramo/cli`.
 ##
-## Look for the `template: ` prefix in comments to see where things fit
+## Look for the `__TEMPLATE__: ` prefix in comments to see where things fit
 ##
 
 version: 3.0
@@ -66,7 +66,7 @@ constants:
     - createSelectiveDisclosureRequest
     - getVerifiableCredentialsForSdr
     - validatePresentationAgainstSdr
-    # template: add your plugin methods here too. This assumes that your plugin is added to the agent. See below, toward the end of this config file.
+    # __TEMPLATE__: add your plugin methods here too. This assumes that your plugin is added to the agent. See below, toward the end of this config file.
     - myPluginFoo
 
 # Database
@@ -206,20 +206,20 @@ keyManager:
   $require: '@veramo/key-manager#KeyManager'
   $args:
     - store:
-        $require: '@veramo/data-store#KeyStore' # template: or you can use './build#MyKeyStore' instead
+        $require: '@veramo/data-store#KeyStore' # __TEMPLATE__: or you can use './build#MyKeyStore' instead
         $args:
           - $ref: /dbConnection
       kms:
         local:
           $require: '@veramo/kms-local#KeyManagementSystem'
           $args:
-            - $require: '@veramo/data-store#PrivateKeyStore' # template: or you can use './build#MyPrivateKeyStore' instead
+            - $require: '@veramo/data-store#PrivateKeyStore' # __TEMPLATE__: or you can use './build#MyPrivateKeyStore' instead
               $args:
                 - $ref: /dbConnection
                 - $require: '@veramo/kms-local#SecretBox'
                   $args:
                     - $ref: /constants/secretKey
-        # template: you can install your own Key Management System implementation too
+        # __TEMPLATE__: you can install your own Key Management System implementation too
         my:
           $require: ./build#MyKeyManagementSystem
 
@@ -228,12 +228,12 @@ didManager:
   $require: '@veramo/did-manager#DIDManager'
   $args:
     - store:
-        $require: '@veramo/data-store#DIDStore' # template: or you can use './build#MyDIDStore'
+        $require: '@veramo/data-store#DIDStore' # __TEMPLATE__: or you can use './build#MyDIDStore'
         $args:
           - $ref: /dbConnection
       defaultProvider: did:ethr:goerli
       providers:
-        # template: you can install your customized DID provider like so
+        # __TEMPLATE__: you can install your customized DID provider like so
         did:my:
           $require: ./build#MyIdentifierProvider
           $args:
@@ -278,5 +278,5 @@ agent:
         - $require: '@veramo/data-store#DataStoreORM'
           $args:
             - $ref: /dbConnection
-          # template: install your plugin on the `@veramo/cli` agent
+          # __TEMPLATE__: install your plugin on the `@veramo/cli` agent
         - $require: ./build#MyAgentPlugin

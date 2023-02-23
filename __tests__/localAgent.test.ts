@@ -1,8 +1,8 @@
 import { getConfig } from '@veramo/cli/build/setup'
 import { createObjects } from '@veramo/cli/build/lib/objectCreator'
 import { DataSource } from 'typeorm'
-
 import fs from 'fs'
+import { jest } from '@jest/globals'
 
 jest.setTimeout(30000)
 
@@ -15,9 +15,9 @@ let agent: any
 
 const setup = async (): Promise<boolean> => {
 
-  const config = getConfig('./agent.yml')
+  const config = await getConfig('./agent.yml')
 
-  const { localAgent, db } = createObjects(config, { localAgent: '/agent', db: '/dbConnection' })
+  const { localAgent, db } = await createObjects(config, { localAgent: '/agent', db: '/dbConnection' })
   agent = localAgent
   dbConnection = db
 
@@ -27,7 +27,7 @@ const setup = async (): Promise<boolean> => {
 const tearDown = async (): Promise<boolean> => {
   try {
     await dbConnection.dropDatabase()
-    await dbConnection.close()
+    await dbConnection.destroy()
     fs.unlinkSync('./database.sqlite')
   } catch (e: any) {
     // nop

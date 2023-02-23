@@ -1,5 +1,7 @@
-import { TAgent, IMessageHandler } from '@veramo/core'
-import { IMyAgentPlugin } from '../../src/types/IMyAgentPlugin'
+// noinspection ES6PreferShortImport
+
+import { TAgent, IMessageHandler } from '@veramo/core-types'
+import { IMyAgentPlugin } from '../../src/types/IMyAgentPlugin.js'
 
 type ConfiguredAgent = TAgent<IMyAgentPlugin & IMessageHandler>
 
@@ -11,11 +13,13 @@ export default (testContext: {
   describe('my plugin', () => {
     let agent: ConfiguredAgent
 
-    beforeAll(() => {
-      testContext.setup()
+    beforeAll(async () => {
+      await testContext.setup()
       agent = testContext.getAgent()
     })
-    afterAll(testContext.tearDown)
+    afterAll(async () => {
+      await testContext.tearDown()
+    })
 
     it('should foo', async () => {
       const result = await agent.myPluginFoo({

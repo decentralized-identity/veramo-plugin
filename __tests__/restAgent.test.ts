@@ -1,3 +1,5 @@
+// noinspection ES6PreferShortImport
+
 import 'cross-fetch/polyfill'
 import {
   IAgent,
@@ -12,11 +14,12 @@ import { Server } from 'http'
 import { AgentRouter, RequestWithAgentRouter } from '@veramo/remote-server'
 import { getConfig } from '@veramo/cli/build/setup'
 import { createObjects } from '@veramo/cli/build/lib/objectCreator'
-import { IMyAgentPlugin } from '../src/types/IMyAgentPlugin'
 import fs from 'fs'
+import { jest } from '@jest/globals'
 
 jest.setTimeout(30000)
 
+import { IMyAgentPlugin } from '../src/types/IMyAgentPlugin.js'
 // Shared tests
 import myPluginLogic from './shared/myPluginLogic'
 
@@ -42,9 +45,9 @@ const getAgent = (options?: IAgentOptions) =>
 
 const setup = async (options?: IAgentOptions): Promise<boolean> => {
 
-  const config = getConfig('./agent.yml')
+  const config = await getConfig('./agent.yml')
   config.constants.databaseFile = databaseFile
-  const { agent, db } = createObjects(config, { agent: '/agent', db: '/dbConnection' })
+  const { agent, db } = await createObjects(config, { agent: '/agent', db: '/dbConnection' })
   serverAgent = agent
   dbConnection = db
 
@@ -66,10 +69,12 @@ const setup = async (options?: IAgentOptions): Promise<boolean> => {
 }
 
 const tearDown = async (): Promise<boolean> => {
-  restServer.close()
   try {
+    await new Promise((resolve, reject) => {
+      restServer.close((err) => err ? reject(err) : resolve(null))
+    })
     await dbConnection.dropDatabase()
-    await dbConnection.close()
+    await dbConnection.destroy()
     fs.unlinkSync(databaseFile)
   } catch (e: any) {
     // nop

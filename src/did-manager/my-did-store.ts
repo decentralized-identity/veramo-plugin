@@ -1,4 +1,4 @@
-import { IIdentifier } from '@veramo/core'
+import { IIdentifier } from '@veramo/core-types'
 import { AbstractDIDStore } from '@veramo/did-manager'
 
 /**
@@ -15,21 +15,20 @@ import { AbstractDIDStore } from '@veramo/did-manager'
  * @alpha
  */
 export class MyDIDStore extends AbstractDIDStore {
-  async get({ did, alias, provider }: { did: string; alias: string; provider: string }): Promise<IIdentifier> {
-    throw Error('IdentityStore get not implemented')
+
+  importDID(args: IIdentifier): Promise<boolean> {
+    throw new Error("not_implemented: importDID")
   }
 
-  async delete({ did }: { did: string }) {
-    throw Error('IdentityStore delete not implemented')
-    return true
+  getDID(args: { did: string } | { alias: string; provider: string }): Promise<IIdentifier> {
+    throw new Error("not_implemented: getDID")
   }
 
-  async import(args: IIdentifier) {
-    throw Error('IdentityStore import not implemented')
-    return true
+  async deleteDID(args: { did: string }): Promise<boolean> {
+    throw new Error("not_implemented: deleteDID")
   }
 
-  async list(args: { alias?: string; provider?: string }): Promise<IIdentifier[]> {
-    throw Error('IdentityStore list not implemented')
+  listDIDs(args: { alias?: string; provider?: string }): Promise<IIdentifier[]> {
+    throw new Error("not_implemented: listDIDs")
   }
 }

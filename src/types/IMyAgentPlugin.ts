@@ -1,4 +1,4 @@
-import { IPluginMethodMap, IAgentContext, IDIDManager, IResolver } from '@veramo/core'
+import { IPluginMethodMap, IAgentContext, IDIDManager, IResolver } from '@veramo/core-types'
 
 /**
  * My Agent Plugin description.
@@ -8,7 +8,7 @@ import { IPluginMethodMap, IAgentContext, IDIDManager, IResolver } from '@veramo
  * Depending on the agent configuration, other agent plugins, as well as the application where the agent is used
  * will be able to call these methods.
  *
- * To build a schema for your plugin using standard tools, you must link to this file in package.json.
+ * To build a schema for your plugin using standard tools, you must link to this file in your package.json.
  * Example:
  * ```
  * "veramo": {
@@ -73,7 +73,7 @@ export type IMyAgentPluginFooResult = {
  * For this plugin to function properly, the agent needs to also have other plugins installed that implement the
  * interfaces declared here.
  * You can also define requirements on a more granular level, for each plugin method or event handler of your plugin.
- * 
+ *
  * @beta
  */
 export type IRequiredContext = IAgentContext<IResolver & IDIDManager>
