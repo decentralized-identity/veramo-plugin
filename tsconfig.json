@@ -3,12 +3,15 @@
     "strict": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "outDir": "build"
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "build",
+    "rootDir": "src"
   },
   "exclude": [
     "**/__tests__/**/*",

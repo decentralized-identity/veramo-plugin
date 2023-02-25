@@ -6,10 +6,7 @@ import {
   IMyAgentPluginFooResult
 } from '../types/IMyAgentPlugin.js'
 
-// @ts-ignore
 import schema from "../plugin.schema.json" assert { type: 'json' }
-
-export { schema }
 
 /**
  * {@inheritDoc IMyAgentPlugin}
