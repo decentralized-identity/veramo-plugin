@@ -1,5 +1,7 @@
-import { TAgent, IMessageHandler, IDIDManager, ICredentialPlugin } from '@veramo/core'
-import { IMyAgentPlugin } from '../../src/types/IMyAgentPlugin'
+import { TAgent, IMessageHandler, IDIDManager, ICredentialPlugin } from '@veramo/core-types'
+import { IMyAgentPlugin } from '../../src/types/IMyAgentPlugin.js'
+
+import { jest } from '@jest/globals'
 
 type ConfiguredAgent = TAgent<IMyAgentPlugin & IMessageHandler & IDIDManager & ICredentialPlugin>
 
@@ -11,11 +13,14 @@ export default (testContext: {
   describe('my plugin events', () => {
     let agent: ConfiguredAgent
 
-    beforeAll(() => {
-      testContext.setup()
+    beforeAll(async () => {
+      await testContext.setup()
       agent = testContext.getAgent()
     })
-    afterAll(testContext.tearDown)
+
+    afterAll(async () => {
+      await testContext.tearDown()
+    })
 
     it('should emit my-event', async () => {
       expect.assertions(1)

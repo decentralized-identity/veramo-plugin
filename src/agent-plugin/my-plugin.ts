@@ -1,6 +1,12 @@
-import { IAgentPlugin } from '@veramo/core'
-import { IMyAgentPlugin, IMyAgentPluginFooArgs, IRequiredContext, IMyAgentPluginFooResult } from '../types/IMyAgentPlugin'
-import { schema } from '../index'
+import { IAgentPlugin } from '@veramo/core-types'
+import {
+  IMyAgentPlugin,
+  IMyAgentPluginFooArgs,
+  IRequiredContext,
+  IMyAgentPluginFooResult
+} from '../types/IMyAgentPlugin.js'
+
+import schema from "../plugin.schema.json" assert { type: 'json' }
 
 /**
  * {@inheritDoc IMyAgentPlugin}

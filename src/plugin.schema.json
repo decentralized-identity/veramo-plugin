@@ -23,7 +23,7 @@
             "bar",
             "foo"
           ],
-          "description": "Arguments needed for  {@link  MyAgentPlugin.myPluginFoo } \nTo be able to export a plugin schema, your plugin methods should use an `args` parameter of a named type or interface."
+          "description": "Arguments needed for  {@link  MyAgentPlugin.myPluginFoo  } \nTo be able to export a plugin schema, your plugin methods should use an `args` parameter of a named type or interface."
         },
         "IMyAgentPluginFooResult": {
           "type": "object",
@@ -33,7 +33,7 @@
             },
             "baz": {}
           },
-          "description": "Result of  {@link  MyAgentPlugin.myPluginFoo } \nTo be able to export a plugin schema, your plugin return types need to be Promises of a named type or interface."
+          "description": "Result of  {@link  MyAgentPlugin.myPluginFoo  } \nTo be able to export a plugin schema, your plugin return types need to be Promises of a named type or interface."
         }
       },
       "methods": {

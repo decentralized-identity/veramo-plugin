@@ -1,12 +1,10 @@
 /**
  * @public
  */
-const schema = require('../plugin.schema.json')
-export { schema }
-export { MyAgentPlugin } from './agent/my-plugin'
-export { MyKeyManagementSystem } from './key-manager/my-key-management-system'
-export { MyKeyStore } from './key-manager/my-key-store'
-export { SecretBox } from './key-manager/my-secret-box'
-export { MyIdentifierProvider } from './did-manager/my-identifier-provider'
-export { MyDIDStore } from './did-manager/my-did-store'
-export * from './types/IMyAgentPlugin'
+export { MyAgentPlugin } from './agent-plugin/my-plugin.js'
+export { MyKeyManagementSystem } from './key-manager/my-key-management-system.js'
+export { MyKeyStore } from './key-manager/my-key-store.js'
+export { SecretBox } from './key-manager/my-secret-box.js'
+export { MyIdentifierProvider } from './did-manager/my-identifier-provider.js'
+export { MyDIDStore } from './did-manager/my-did-store.js'
+export * from './types/IMyAgentPlugin.js'
