@@ -10,8 +10,7 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "build",
-    "rootDir": "src"
+    "outDir": "build"
   },
   "exclude": [
     "**/__tests__/**/*",
