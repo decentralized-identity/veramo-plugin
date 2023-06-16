@@ -10,7 +10,8 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "build"
+    "outDir": "build",
+    "skipLibCheck": true
   },
   "exclude": [
     "**/__tests__/**/*",
