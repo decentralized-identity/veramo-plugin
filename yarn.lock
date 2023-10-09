@@ -2310,10 +2310,10 @@
     ws "^8.13.0"
     yaml "^2.3.1"
 
-"@veramo/core-types@^5.1.2", "@veramo/core-types@^5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@veramo/core-types/-/core-types-5.5.0.tgz#d53410e4e8772616833365b8172475031a9f68d8"
-  integrity sha512-LRmwzAv4igIhb+kuxFAqqhvnilIqTsw6vQoz9pcvt6R+CcmR6YhvudWXFKtQvfvxvPqVeMr1Ov/kuVG0kVIgTA==
+"@veramo/core-types@^5.1.2", "@veramo/core-types@^5.5.0", "@veramo/core-types@^5.5.3":
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/@veramo/core-types/-/core-types-5.5.3.tgz#f8c63b8390013d5278bc49b56d8f3563ab277f4d"
+  integrity sha512-52uWGnipwoiWMqIKELrw0WQQo85RfiW6IYJl25P/ArZWRwwXxNm8SI4t2wkM9ljswRjQwqFWN8SyiOGhNeHN+A==
   dependencies:
     credential-status "^2.0.5"
     debug "^4.3.3"
@@ -2422,6 +2422,14 @@
     "@veramo/core-types" "^5.5.0"
     debug "^4.3.3"
 
+"@veramo/did-discovery@^5.5.3":
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/@veramo/did-discovery/-/did-discovery-5.5.3.tgz#39091b55421b339f8593fbd236f0800bbea3920f"
+  integrity sha512-Riz47HWhRdvYPGAN77L7LXabjQWwB5FNcM7YfxsY6dDgfx10aO4U9Fjl/h3ODjxwlvNyMNz/fmLAlUgISPaSKA==
+  dependencies:
+    "@veramo/core-types" "^5.5.3"
+    debug "^4.3.3"
+
 "@veramo/did-jwt@^5.5.0":
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/@veramo/did-jwt/-/did-jwt-5.5.0.tgz#43017ab87c44a003ad30866a7b500698f7c78eaa"
@@ -2434,12 +2442,12 @@
     did-resolver "^4.1.0"
 
 "@veramo/did-manager@^5.1.2", "@veramo/did-manager@^5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@veramo/did-manager/-/did-manager-5.5.0.tgz#07adf5eab0af98423dbb3b70a5e763be0450e9fc"
-  integrity sha512-ekXHu4Dvcgqbqtx5L2j52/9lMINXHXDXpjvoH98yyNigHpHF99KN1Be7UoJsY4Z7G/Wxj4KhHna+VgNMa/5VNg==
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/@veramo/did-manager/-/did-manager-5.5.3.tgz#b92e536190ec4789cb9f0743736b200dd9f414cd"
+  integrity sha512-nDmoZV0MV5fyjn0ApSh0wgTb9cSuVIRa4lUbkOG1P/7TkQMunPsQk3gw95tflEU5B/m7CClCUiKwk8qh8Mf8kw==
   dependencies:
-    "@veramo/core-types" "^5.5.0"
-    "@veramo/did-discovery" "^5.5.0"
+    "@veramo/core-types" "^5.5.3"
+    "@veramo/did-discovery" "^5.5.3"
 
 "@veramo/did-provider-ethr@^5.5.0":
   version "5.5.0"
@@ -2527,16 +2535,16 @@
     did-resolver "^4.1.0"
 
 "@veramo/key-manager@^5.1.2", "@veramo/key-manager@^5.5.0":
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/@veramo/key-manager/-/key-manager-5.5.0.tgz#f7aed85262ea4bc857f6b2b97b0930ff7d4a28cb"
-  integrity sha512-tmZQiVvB+/ePEmuWD0+VP1+yWZZphO3QIoL0Fc/vBfhTQ7KJOKlVA5Dkvj4J8qaWxGGhlssZ7QZdKqwzfX5XvA==
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/@veramo/key-manager/-/key-manager-5.5.3.tgz#5c6f695dd2f97a610c348622661b0a755be7928c"
+  integrity sha512-fhC+fOr70hcq0ozRgg7zWJz1UV5u1mOD/jXEPopXBCgVBBbh4Dyp+0XsP0ibALFllkOCaPm7S0GBsLyWh3WxAQ==
   dependencies:
     "@ethersproject/bytes" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
     "@ethersproject/transactions" "^5.7.0"
     "@noble/curves" "^1.1.0"
-    "@veramo/core-types" "^5.5.0"
-    "@veramo/utils" "^5.5.0"
+    "@veramo/core-types" "^5.5.3"
+    "@veramo/utils" "^5.5.3"
     debug "^4.3.4"
     did-jwt "^7.2.5"
     uint8arrays "^4.0.6"
@@ -2629,6 +2637,25 @@
     "@noble/curves" "^1.1.0"
     "@noble/hashes" "^1.3.1"
     "@veramo/core-types" "^5.5.0"
+    credential-status "^2.0.5"
+    cross-fetch "^4.0.0"
+    debug "^4.3.3"
+    did-jwt "^7.2.5"
+    did-jwt-vc "^3.2.5"
+    did-resolver "^4.1.0"
+    multiformats "^12.0.1"
+    uint8arrays "^4.0.6"
+
+"@veramo/utils@^5.5.3":
+  version "5.5.3"
+  resolved "https://registry.yarnpkg.com/@veramo/utils/-/utils-5.5.3.tgz#76ca7a87e361aeb67b1f64a91a10c8d1ec32792d"
+  integrity sha512-ZvlMiO2KB7qScfy68+ubjY/9z42u4aK8Yd0bn498cUD2emCLg94gnpi9bw0ntLR4fIarSfwT9dt5kepjGZ/nPw==
+  dependencies:
+    "@ethersproject/signing-key" "^5.7.0"
+    "@ethersproject/transactions" "^5.7.0"
+    "@noble/curves" "^1.1.0"
+    "@noble/hashes" "^1.3.1"
+    "@veramo/core-types" "^5.5.3"
     credential-status "^2.0.5"
     cross-fetch "^4.0.0"
     debug "^4.3.3"
