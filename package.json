@@ -38,8 +38,8 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@veramo/core-types": "^5.1.2",
-    "@veramo/did-manager": "^5.1.2",
-    "@veramo/key-manager": "^5.1.2"
+    "@veramo/core-types": "^6.0.0",
+    "@veramo/did-manager": "^6.0.0",
+    "@veramo/key-manager": "^6.0.0"
   }
 }
