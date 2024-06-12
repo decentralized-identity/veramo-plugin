@@ -221,7 +221,7 @@ keyManager:
                     - $ref: /constants/secretKey
         # __TEMPLATE__: you can install your own Key Management System implementation too
         my:
-          $require: ./build/key-manager/my-key-management-system.js#MyKeyManagementSystem
+          $require: ./build/index.js#MyKeyManagementSystem
 
 # DID Manager
 didManager:
@@ -235,7 +235,7 @@ didManager:
       providers:
         # __TEMPLATE__: you can install your customized DID provider like so
         did:my:
-          $require: ./build/did-manager/my-identifier-provider.js#MyIdentifierProvider
+          $require: ./build/index.js#MyIdentifierProvider
           $args:
             - defaultKms: local
         did:ethr:
@@ -279,4 +279,4 @@ agent:
           $args:
             - $ref: /dbConnection
           # __TEMPLATE__: install your plugin on the `@veramo/cli` agent
-        - $require: ./build/agent-plugin/my-plugin.js#MyAgentPlugin
+        - $require: ./build/index.js#MyAgentPlugin
