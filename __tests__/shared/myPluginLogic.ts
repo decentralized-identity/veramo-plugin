@@ -23,7 +23,7 @@ export default (testContext: {
 
     it('should foo', async () => {
       const result = await agent.myPluginFoo({
-        did: 'did:ethr:goerli:0xb09b66026ba5909a7cfe99b76875431d2b8d5190',
+        did: 'did:ethr:sepolia:0xb09b66026ba5909a7cfe99b76875431d2b8d5190',
         foo: 'lorem',
         bar: 'ipsum',
       })
